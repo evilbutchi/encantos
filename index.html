@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Encantos | Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>ENCANTOS<span class="span">&reg;</span></h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Bikes</a>
+      <a href="merch.html">Merch</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="slideshow">
+  <div class="slideshow-container">
+    <img src="images/hero-bg.jpg" class="slide active" alt="Slide 1">
+    <img src="images/crookedcrew.jpg" class="slide" alt="Slide 2">
+    <img src="images/inksoedited.jpg" class="slide" alt="Slide 3">
+    <a class="prev">&#10094;</a>
+    <a class="next">&#10095;</a> 
+  </div>
+</section>
+    <section class="hero">
+      <h2 class="old-english">Crooked Ones</h2>
+      <p>Welcome to TamBike — our online pit stop.
+We're just some guys who love classic bikes with personality, garage finds with history, and the ride that comes with it all.</p>
+      <a class="btn" href="projects.html">See Our Bikes</a>
+    </section>
+
+    <section class="features">
+  <div class="container">
+    <h2>What We Ride</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Custom & Classic Bikes</h3>
+        <p>We showcase timeless machines — vintage, café racers, bobbers, and garage builds that have soul, scars, and stories.</p>
+      </div>
+      <div class="card">
+        <h3>Rider Stories</h3>
+        <p>Every ride has a tale. We document personal journeys, roadside stops, wrench-time, and memories made on two wheels.</p>
+      </div>
+      <div class="card">
+        <h3>Gear & Culture</h3>
+        <p>From helmets to jackets, from old-school rock to Filipino streets — we explore the lifestyle that comes with the ride.</p>
+      </div>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Encantos | Crooked Ones</p>
+  </footer>
+
+  <script>
+  let slideIndex = 0;
+  const slides = document.querySelectorAll(".slide");
+  const prev = document.querySelector(".prev");
+  const next = document.querySelector(".next");
+
+  function showSlide(index) {
+    slides.forEach((slide) => slide.classList.remove("active"));
+    slideIndex = (index + slides.length) % slides.length; 
+    slides[slideIndex].classList.add("active");
+  }
+
+  function autoSlide() {
+    showSlide(slideIndex + 1);
+    setTimeout(autoSlide, 4000);
+  }
+
+
+  prev.addEventListener("click", () => showSlide(slideIndex - 1));
+  next.addEventListener("click", () => showSlide(slideIndex + 1));
+
+  
+  window.onload = () => {
+    showSlide(slideIndex);
+    setTimeout(autoSlide, 3000);
+  };
+</script>
+
+<div class="social-icons">
+  <a href="https://www.facebook.com/encantosph" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://www.instagram.com/crookedones" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.youtube.com/@encantostv6995" target="_blank"><i class="fab fa-youtube"></i></a>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</body>
+</html>
