@@ -158,6 +158,7 @@ section {
   width: 100%;
   height: 60vh;
   max-height: 600px;
+  aspect-ratio: 16/9;
 }
 
 .slide {
@@ -177,6 +178,13 @@ section {
 
 .slide:not(.active) {
   opacity: 0;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radiues: 20px;
 }
 
 .prev, .next {
@@ -306,11 +314,13 @@ footer {
 
 @media (max-width: 480px) {
   .slideshow-container {
-    height: 40vh;
+    height: auto;
+    aspect-ratio: 4/3;
+    max-height: 30px;
   }
 
   .box {
-    height: 220px;
+    height: 180px;
   }
 
   nav {
@@ -324,3 +334,4 @@ footer {
     font-size: 0.9rem;
   }
 }
+
